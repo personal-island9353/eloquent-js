@@ -2,9 +2,12 @@
   "name": "eloquent",
   "version": "1.0.0",
   "description": "Code to work along the Eloquent JavaScript book from Marijn Haverbeke",
-  "main": "index.js",
+  "main": "src/index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "format": "prettier . --write",
+    "prepare": "husky",
+    "lint": "eslint src/ --max-warnings 0",
+    "lint:fix": "eslint src/ --max-warnings 0 --fix"
   },
   "repository": {
     "type": "git",
@@ -12,10 +15,23 @@
   },
   "keywords": [],
   "author": "",
-  "license": "ISC",
-  "type": "commonjs",
+  "license": "MIT",
+  "type": "module",
   "bugs": {
     "url": "https://github.com/personal-island9353/eloquent-js/issues"
   },
-  "homepage": "https://github.com/personal-island9353/eloquent-js#readme"
+  "homepage": "https://github.com/personal-island9353/eloquent-js#readme",
+  "devDependencies": {
+    "@eslint/css": "^0.14.1",
+    "@eslint/js": "^9.39.1",
+    "@eslint/json": "^0.14.0",
+    "@eslint/markdown": "^7.5.1",
+    "eslint": "^9.39.1",
+    "globals": "^16.5.0",
+    "husky": "^9.1.7",
+    "prettier": "3.6.2"
+  },
+  "lint-staged": {
+    "**/*": "prettier --write --ignore-unknown"
+  }
 }
